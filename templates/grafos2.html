@@ -1,0 +1,32 @@
+<html>
+<head>
+<script language="javascript">
+function crear(){
+var col = document.getElementById("cols").value;
+var filas = document.getElementById("cols").value;
+var tabla="<table border=\"0\">";
+for(i=0;i<filas;i++){
+tabla+="<tr>";
+for(j=0;j<col;j++){ 
+tabla+="<td>"+"<input type=\"text\" size=\"1\">"+ "</td>";
+}
+tabla+="</tr>";
+}
+tabla+="</table>";
+document.getElementById("resultado").innerHTML=tabla;
+}
+function crear2(){
+document.getElementById("resultado").innerHTML="";
+}
+
+</script>
+</head>
+<body>
+<form>
+<input type="text" id="cols" /> Vertices <br />
+<input type="button" id="enviar" value="crear tabla" onclick="crear()"/>
+</form>
+<div id="resultado" >
+</div>
+</body>
+</html>
