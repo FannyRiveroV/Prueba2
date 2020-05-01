@@ -4,49 +4,13 @@
 
 
   <div id="matriz"></div>
-
-
-    <script language="javascript">
-    var filas, dato, i, j, col, tabla, matriz;
-    function crear()
-    {
-      vertices = document.getElementById("cant_vertices").value;
-      matriz = new Array(vertices);
-      filas=vertices;
-      col=filas;
-
-      for(i=0;i<filas;i++)
-      {
-        matriz[i]= new Array(filas);
-        for(j=0;j<filas;j++){
-          matriz[i][j]=prompt("DATO:");
-
-        }                                    
-      }
-
-     }
-
-
-function imprimirMatriz()
-    {
-      for(i=0;i<filas;i++){
-        for(j=0;j<filas;j++){
-          document.getElementById("matriz").innerHTML +="Elemento ["+ i +"] ["+j+"] " + matriz[i][j]+"<br>";
-        }
-        
-      }
-    }         
-
-
-    </script>
-
-
-      MATRIZ DE ADYANCENCIA DEL GRAFO= <br>
-      <input type="text" id="cant_vertices" /> Vertices <br/>
-      <input type="button" id="enviar" value="crear tabla" onclick="crear()"/>
-      <br>
-      <input type="button" value="imprimir Matriz" onclick="imprimirMatriz()"/>
+   MATRIZ DE ADYANCENCIA DEL GRAFO= <br>
+    <input type="text" id="cant_vertices" /> Vertices <br/>
+    <input type="button" id="enviar" value="crear tabla" onclick="crear()"/>
+    <br>
+    <input type="button" value="imprimir Matriz" onclick="imprimirMatriz()"/>
   
 
   </body>
+  <script type="text/javascript" src="main.js"></script>
 </html>
