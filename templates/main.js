@@ -67,9 +67,9 @@ function conexo()
       inicio+=1;
     }
     if(aux==0)
-      console.log("es conexo");
+      document.getElementById("Informacion").innerHTML="Es conexo";
     else
-      console.log("no es conexo");
+    document.getElementById("Informacion").innerHTML="No es conexo";
 
 }
 
