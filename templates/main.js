@@ -1,6 +1,11 @@
 var filas, dato, i, j, col, tabla, matriz;
 var aux;
-let inicio;
+let inicio=0;
+let ini;
+let llega;
+
+
+
 
 function crear()
 {
@@ -22,26 +27,20 @@ function crear()
        alert("ingrese un 1 o 0");
        matriz[i][j]=0;
      }
-
-  
     }
   }
 }
 
 
 function imprimirMatriz()
-    {
-      for(i=0;i<filas;i++){
-        for(j=0;j<filas;j++){
-          document.getElementById("matriz").innerHTML +="Elemento ["+ i +"] ["+j+"] " + matriz[i][j]+"<br>";
-        }
-        
-      }
-    }         
-
-
-
-
+{
+  for(i=0;i<filas;i++){
+    for(j=0;j<filas;j++){
+      document.getElementById("matriz").innerHTML += matriz[i][j]+" ";
+    }
+    document.getElementById("matriz").innerHTML +="<br>";  
+  }
+}         
 
 
 function conexo()
@@ -67,11 +66,58 @@ function conexo()
       inicio+=1;
     }
     if(aux==0)
-      document.getElementById("Informacion").innerHTML="Es conexo";
+      console.log("es conexo");
     else
-    document.getElementById("Informacion").innerHTML="No es conexo";
+      console.log("no es conexo");
 
 }
 
 
+function caminos(ini,lleg)
+{
+  console.log("empiezo mi ruta en "+ini);
+    if ( matriz[ini][lleg] == 1 )
+    {
+        console.log("finalmente he llegado a " + lleg);
+        return 1;
+    }
+    else
+    {
+        if ( matriz[ini+1][lleg] == 1 )
+          {
+            console.log("pasé por el vertice "+ (ini+1));
+            return (caminos(ini+1,lleg) + 1);
+          }
+        else{
+            return caminos(inicio, lleg-1);
+        }
+    }
+}
 
+
+function muestraCaminos()
+
+{
+  var partede=0;
+  var llegaA=0;
+  var aux_p=0;
+  var aux_ll=0;
+
+  partede= document.getElementById('inicioCaminos').value;
+  llegaA = document.getElementById('llegadaCaminos').value;
+
+  for(i=0;i<partede;i++)
+  {
+    aux_p = aux_p +1;
+
+  }
+  for(j=0;j<llegaA;j++)
+  {
+    aux_ll = aux_ll +1;
+
+  }
+
+  let cami= caminos(aux_p,aux_ll);
+  console.log("cantidad de nodos por lo que pasa: " + cami);
+
+}
