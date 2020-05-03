@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+</head>
+<body>
+    <form id="dataForm">
+        <div class="form-group row">
+            <label for="data" class="col-2 col-form-label">Ingrese cantidad de vertices</label>
+            <div class="col-10">
+                <input id="data" name="data" class="form-control" type="text" value="">
+            </div>
+        </div>
+        <input class="btn btn-large btn-primary" value="Save" type="submit">
+    </form>
+    
+     <script>
+        // Variable to hold request
+        var data = [];
+        $("#dataForm").submit(function(event) {
+            data.push($(this).find('input[name="data"]').val());
+            alert("Dato Añadida");
+            return data;
+        });   
+    </script>
